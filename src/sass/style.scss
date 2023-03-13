@@ -18,7 +18,7 @@ body {
 }
 
 .social-icons{
-	font-size: 2rem;
+	font-size: 4rem;
 	color: $icons-color;
 	transition: transform .5s;
 }
@@ -45,7 +45,6 @@ body {
 		align-items: center;
 		padding-top: 130px;
 		gap: 80px;
-		transition: all 0.5s;
 	}
 
 	&__link {
@@ -55,7 +54,11 @@ body {
 		border-radius: 6px;
 		font-size: 2rem;
 		color: $text-color;
-		transition: all 0.5s;
+		transition: background-color .5s, color .5s;
+
+		&:hover{
+			background-color: #fff;
+		}
 	}
 
 	&--open {
@@ -127,8 +130,22 @@ body {
 }
 
 .title{
+	position: relative;
 	text-transform: uppercase;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
+
+	&::before{
+		position: absolute;
+		left: -15px;
+		top: -5px;
+		display: block;
+		width: 50%;
+		height: 100%;
+		border-top: 2px solid $mywork-bgc;
+		border-left: 1px solid $mywork-bgc;
+		border-radius: 8px;
+		content: '';
+	}
 }
 
 // header
@@ -190,6 +207,7 @@ body {
 	}
 
 	&__title{
+		font-size: 4rem;
 		transform: translateY(-400px);
 		transition: transform 3s;
 	}
@@ -225,14 +243,19 @@ body {
 	
 
 	&__footage {
-		width: 250px;
+		width: 450px;
 		border-radius: 50%;
 	}
 
-	&__text {
-		padding: 0 40px;
-		font-size: 1rem;
+	&__check-git {
+		font-size: 1.5rem;
 		text-align: center;
+	}
+
+	&__describe{
+		text-align: center;
+		padding: 0 2em;
+		font-size: 1rem;
 	}
 }
 
@@ -251,9 +274,12 @@ body {
 	background-color: $mywork-bgc;
 
 	&__heading {
-		text-transform: uppercase;
-		font-size: 1.5rem;
 		color: $text-color;
+
+		&::before{
+			border-top: 2px solid $text-color;
+		border-left: 1px solid $text-color;
+		}
 	}
 
 	&__works {
@@ -265,10 +291,11 @@ body {
 
 	&__work {
 		position: relative;
-		width: 200px;
+		width: 300px;
 		height: 200px;
 		margin: 30px 0;
 		border-radius: 15px;
+		box-shadow: 5px 5px 10px 2px;
 		overflow: hidden;
 		transition: all 0.5s;
 	}
@@ -289,10 +316,41 @@ body {
 		width: 100%;
 		transform: translate(-50%, -50%);
 		text-align: center;
-		font-size: 0.8rem;
+		font-size: 1rem;
 		color: rgba(0, 0, 0, 0);
 		background-color: rgba(0, 0, 0, 0);
-		transition: all 0.5s;
+		transition: color 0.5s, background-color 0.5s;
+	}
+
+	&__link{
+		position: relative;
+		padding: 10px 20px;
+		color: $text-color;
+		text-decoration: none;
+		color: rgba(0, 0, 0, 0);
+		transition: color .5s;
+
+		&::before{
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #fff;
+			width: 0;
+			height: 1px;
+			transition: width 0.5s;
+			content: '';
+		}
+
+		&:hover{
+			&::before{
+				width: 30%;
+			}
+		}
+	}
+
+	&__work:hover &__link{
+		color: $text-color;
 	}
 
 	&__work:hover &__text-box {
@@ -301,6 +359,7 @@ body {
 	}
 
 	&__work-title {
+		font-size: 1.5rem;
 		text-transform: uppercase;
 	}
 }
@@ -319,12 +378,9 @@ body {
 	padding-bottom: 40px;
 	background-color: #ddd;
 
-	&__heading {
-		text-transform: uppercase;
-		font-size: 1.5rem;
-	}
-
 	&__social-title{
+		padding: 1em;
+		font-size: 1.5rem;
 		text-align: center;
 	}
 
@@ -333,7 +389,8 @@ body {
 	}
 
 	.social-icons{
-		padding: 20px 20px;
+		margin: 0 0.1em;
+		padding: 0.3em;
 	}
 
 	&__form {
@@ -361,11 +418,19 @@ body {
 		border: none;
 		border-radius: 6px;
 		background-color: $inputs-bgc;
+		color: $text-color;
 		box-shadow: 5px 5px 5px #555;
 	}
 
 	&__input::placeholder {
-		color: $text-color;
+		color: $placeholder-color;
+	}
+
+	&__textarea{
+		min-width: 100%;
+		max-width: 100%;
+		min-height: 250px;
+		max-height: 500px;
 	}
 
 	&__btn {
@@ -399,134 +464,5 @@ body {
 
 //responsive
 
-@media (min-width: 768px) {
+@import 'mediaQueries';
 
-	.social-icons{
-		font-size: 4rem;
-	}
-
-	.nav {
-
-		&__links {
-			padding-top: 300px;
-		}
-
-		&__link {
-			font-size: 2.5rem;
-		}
-
-		&--open {
-			height: 800px;
-		}
-	}
-
-	.animBurger {
-		transform: rotateZ(45deg);
-
-		&::after,
-		&::before {
-			bottom: 0;
-			transform: rotateZ(-90deg);
-		}
-
-		&,
-		&::before,
-		&::after {
-			transition: transform 0.3s 0.3s, bottom 0.3s;
-		}
-	}
-
-	.header__title {
-		font-size: 5rem;
-	}
-
-	.title {
-		font-size: 4rem;
-		text-transform: uppercase;
-	}
-
-	.aboutme {
-		&__footage {
-			width: 600px;
-		}
-
-		&__text {
-			font-size: 2rem;
-		}
-	}
-
-	.mywork {
-		&__works {
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			padding-bottom: 100px;
-			column-gap: 60px;
-		}
-
-		&__work {
-			width: 300px;
-			height: 300px;
-		}
-
-		&__work-title {
-			font-size: 2.5rem;
-		}
-
-		&__text {
-			font-size: 1.8rem;
-		}
-	}
-
-	.contact {
-
-		.social-icons{
-			padding: 40px;
-		}
-
-		&__social-title{
-			font-size: 1.5rem;
-		}
-
-		&__form{
-			padding-bottom: 80px;
-		}
-
-		&__input {
-			font-size: 1.7rem;
-		}
-
-		&__btn {
-			font-size: 1.7rem;
-		}
-	}
-
-	.footer__text {
-		font-size: 1rem;
-	}
-}
-
-@media (min-width: 992px) {
-
-	.nav{
-
-		height: 100px;
-
-		.nav__links{
-			height: 100px;
-			flex-direction: row;
-			align-items: center;
-			justify-content: center;
-			padding: 0;
-		}
-
-		.nav__link:hover{
-			color: #000;
-		}
-	}
-
-	.burger {
-		display: none;
-	}
-
-}

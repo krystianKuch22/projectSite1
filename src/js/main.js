@@ -4,25 +4,6 @@ const navLinks = document.querySelectorAll('.nav__link');
 const year = document.querySelector('.footer__year');
 const mainTitle = document.querySelector('.header__animTitle')
 
-//modify
-
-
-let aboutMe = document.querySelector('.aboutme__text')
-
-aboutMe.textContent = sessionStorage.getItem('changedDescribe')
-
-console.log(sessionStorage.getItem('changedDescribe'));
-
-sessionStorage.setItem('aboutmeText', aboutMe.textContent)
-
-console.log(aboutMe.textContent);
-
-let work1 = document.querySelector('.mywork__work')
-sessionStorage.setItem('work1', work1)
-
-console.log(work1);
-
-//
 const animTitle = () => {
 	mainTitle.parentElement.classList.add('header__title--slide')
 	mainTitle.classList.add('header__animTitle--shown')
@@ -52,5 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
 	handleYear();
 	animTitle();
 });
-
-console.log(mainTitle);
