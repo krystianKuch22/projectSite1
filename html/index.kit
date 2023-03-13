@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcin Zglinicki</title>
+
+
+    <script src="https://kit.fontawesome.com/22513783b9.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+
+<body class="main-page">
+
+    <nav class="nav">
+        <div class="nav__links">
+            <a href="#about-me" class="nav__link">about me</a>
+            <a href="#my-work" class="nav__link">my work</a>
+            <a href="#contact" class="nav__link">contact</a>
+        </div>
+        <button class="burger">
+            <div class="burger__bars"></div>
+        </button>
+    </nav>
+
+    <main>
+        <header class="header" id="#home">
+            <div class="header__hero-img">
+                <div class="header__hero-shadow"></div>
+                <div class="header__text">
+                    <h1 class="header__title"><span class="header__animTitle">Hi, i am Marcin...</span></h1>
+                    <a class="header__btn" type="button" href="#about-me">meet me...</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="aboutme section" id="about-me">
+            <h2 class="aboutme__heading title">about me</h2>
+            <img src="dist/img/foto_small.jpg" alt="" class="aboutme__footage">
+            <p class="aboutme__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus adipisci quos
+                officia aperiam magnam ea, quas tenetur consectetur maiores consequuntur quam ab, provident deleniti.
+                Dolor quiprovident voluptatum, fugiat cupiditate mollitia et perspiciatis modi corporis quae,
+                recusandae, cum esse architecto molestiae ex consequuntur porro possimus quo deserunt reprehenderit
+                neque. Sunt minima fugit nisi doloribus, nulla numquam alias asperiores dolorem!</p>
+                <p class="aboutme__text">You can check my Github:</p>
+                <a href="https://www.google.com/webhp?hl=pl&sa=X&ved=0ahUKEwjP-umVzJz9AhVZgosKHdCNAdIQPAgJ"><i class="fa-brands fa-github social-icons"></i></a>
+
+        </section>
+
+        <section class="mywork section" id="my-work">
+
+            <h2 class="mywork__heading title">my work</h2>
+
+            <div class="mywork__works">
+
+                <div class="mywork__work">
+                    <img class="mywork__img" src="dist/img/work1.jpg" alt="">
+                    <div class="mywork__text-box">
+                        <h3 class="mywork__work-title">work 1</h3>
+                        <p class="mywork__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, quam!
+                        </p>
+                    </div>
+                </div>
+                <div class="mywork__work">
+                    <img class="mywork__img" src="dist/img/work2.jpg" alt="">
+
+                    <div class="mywork__text-box">
+                        <h3 class="mywork__work-title">work 2</h3>
+                        <p class="mywork__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, quam!
+                        </p>
+                    </div>
+                </div>
+                <div class="mywork__work">
+                    <img class="mywork__img" src="dist/img/work3.jpg" alt="">
+                    <div class="mywork__text-box">
+                        <h3 class="mywork__work-title">work 3</h3>
+                        <p class="mywork__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, quam!
+                        </p>
+                    </div>
+                </div>
+                <div class="mywork__work">
+                    <img class="mywork__img" src="dist/img/work4.jpg" alt="">
+                    <div class="mywork__text-box">
+                        <h3 class="mywork__work-title">work 4</h3>
+                        <p class="mywork__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, quam!
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section class="contact section" id="contact">
+
+            <h2 class="contact__heading title">contact</h2>
+
+            <div class="contact__socials-box">
+                <h3 class="contact__social-title">Check my other socials below...</h3>
+                <div class="contact__social-icons-box">
+                    
+                    <a href="modify.html"><i class="fa-brands fa-github social-icons"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook social-icons"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram social-icons"></i></a>
+                </div>
+                <h3 class="contact__social-title">Or write to me !</h3>
+            </div>
+            <form onsubmit="sendEmail(); reset(); return false;" class="contact__form" id="contact__form">
+                <div class="contact__input-box">
+                    <input type="text" placeholder="Name" class="contact__input contact__input-up" id="name" required>
+                    <input type="text" placeholder="E-mail" class="contact__input contact__input-up" id="email" required>
+                </div>
+                <input type="text" placeholder="Subject" class="contact__input" id="subject" required>
+                <textarea cols="30" rows="10" placeholder="Message" class="contact__textarea contact__input" id="message" required></textarea>
+
+                <button type="submit" class="contact__btn">Send</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <p class="footer__text">© <span class="footer__year"></span> | Krystian Kucharski</p>
+
+    </footer>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="dist/js/main.min.js"></script>
+    <script src="dist/js/scrollSpy.min.js"></script>
+    <script src="dist/js/contactForm.min.js"></script>
+</body>
+
+</html>
